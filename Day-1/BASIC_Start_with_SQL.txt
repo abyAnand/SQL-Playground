@@ -1,0 +1,74 @@
+// Initial Data for actors table
+
+// Table structure for actors
+CREATE TABLE actors (
+    actor_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth DATE,
+    nationality VARCHAR(50),
+    number_of_awards INT
+);
+
+// Inserting sample data into actors table
+INSERT INTO actors (actor_id, first_name, last_name, date_of_birth, nationality, number_of_awards)
+VALUES 
+(1, 'Leonardo', 'DiCaprio', '1974-11-11', 'American', 3),
+(2, 'Scarlett', 'Johansson', '1984-11-22', 'American', 2),
+(3, 'Morgan', 'Freeman', '1937-06-01', 'American', 1),
+(4, 'Natalie', 'Portman', '1981-06-09', 'Israeli-American', 1),
+(5, 'Tom', 'Hanks', '1956-07-09', 'American', 2);
+
+
+// Query 1: Select all records from the actors table
+-------------------------------------------------
+SELECT * FROM actors;
+-------------------------------------------------
+// Result:
+
+| actor_id | first_name | last_name   | date_of_birth | nationality      | number_of_awards |
+|----------|------------|-------------|---------------|------------------|------------------|
+| 1        | Leonardo   | DiCaprio    | 1974-11-11    | American         | 3                |
+| 2        | Scarlett   | Johansson   | 1984-11-22    | American         | 2                |
+| 3        | Morgan     | Freeman     | 1937-06-01    | American         | 1                |
+| 4        | Natalie    | Portman     | 1981-06-09    | Israeli-American | 1                |
+| 5        | Tom        | Hanks       | 1956-07-09    | American         | 2                |
+
+
+// Query 2: Order actors by last name in ascending order
+--------------------------------------------------------
+SELECT * FROM actors ORDER BY last_name;
+--------------------------------------------------------
+// Result:
+
+| actor_id | first_name | last_name   | date_of_birth | nationality      | number_of_awards |
+|----------|------------|-------------|---------------|------------------|------------------|
+| 1        | Leonardo   | DiCaprio    | 1974-11-11    | American         | 3                |
+| 3        | Morgan     | Freeman     | 1937-06-01    | American         | 1                |
+| 5        | Tom        | Hanks       | 1956-07-09    | American         | 2                |
+| 2        | Scarlett   | Johansson   | 1984-11-22    | American         | 2                |
+| 4        | Natalie    | Portman     | 1981-06-09    | Israeli-American | 1                |
+
+
+// Query 3: Select distinct nationalities from the actors table
+---------------------------------------------------------------
+SELECT DISTINCT nationality FROM actors;
+---------------------------------------------------------------
+// Result:
+
+| nationality      |
+|------------------|
+| American         |
+| Israeli-American |
+| British          |
+
+
+// Query 4: Count the total number of actors in the actors table
+---------------------------------------------------------------
+SELECT COUNT(*) AS total_actors FROM actors;
+---------------------------------------------------------------
+// Result:
+
+| total_actors |
+|--------------|
+| 6            |
