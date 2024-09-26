@@ -178,3 +178,17 @@ WHERE first_name LIKE '%n%';
 | 4        | Natalie    | Portman     | 1981-06-09    | Israeli-American  |      1           |
 | 1        | Leonardo   | DiCaprio    | 1974-11-11    | American          |      3           |
 
+
+
+// Query 1.13: Select actors whose first name starts with 'l' (case-insensitive)
+---------------------------------------------------------------------------------
+SELECT * FROM actors 
+WHERE first_name ILIKE 'l%';
+---------------------------------------------------------------------------------
+// Result:
+
+| actor_id | first_name | last_name   | date_of_birth | nationality | number_of_awards |
+|----------|------------|-------------|---------------|-------------|------------------|
+| 1        | Leonardo   | DiCaprio    | 1974-11-11    | American    | 3                |
+
+---------------------------------------------------------------
